@@ -1,8 +1,14 @@
 
 =============================FINAL STEPS TO INSTALL MINIKUBE==================================
 dnf install -y kubelet kubeadm
+
+
 systemctl enable --now kubelet
+
+
 swapoff -a
+
+
 sed -i '/swap/d' /etc/fstab
 minikube delete
 minikube start --driver=none
